@@ -1422,7 +1422,9 @@ int32_t msm_sensor_driver_probe(void *setting,
 		slave_info->vendor_id_info = slave_info32->vendor_id_info;
 		slave_info->vcm_id_info = slave_info32->vcm_id_info;
 #ifdef CONFIG_MACH_XIAOMI_NEW_CAMERA
+#ifndef CONFIG_MACH_XIAOMI_LAVENDER
         slave_info->lens_id_info = slave_info32->lens_id_info;
+#endif
 #endif
 #endif
 		slave_info->slave_addr = slave_info32->slave_addr;
@@ -1730,7 +1732,9 @@ CSID_TG:
 	s_ctrl->sensordata->vendor_id_info = &(slave_info->vendor_id_info);
 	s_ctrl->sensordata->vcm_id_info = &(slave_info->vcm_id_info);
 #ifdef CONFIG_MACH_XIAOMI_NEW_CAMERA
+#ifndef CONFIG_MACH_XIAOMI_LAVENDER
     s_ctrl->sensordata->lens_id_info = &(slave_info->lens_id_info);
+#endif
 #endif
 #endif
 	/*

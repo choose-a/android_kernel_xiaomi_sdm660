@@ -442,6 +442,7 @@ int msm_sensor_match_vendor_id(struct msm_sensor_ctrl_t *s_ctrl)
 		have_vcmid = 1;
 	}
 #ifdef CONFIG_MACH_XIAOMI_NEW_CAMERA
+#ifndef CONFIG_MACH_XIAOMI_LAVENDER
     if (s_ctrl->sensordata->lens_id_info->lens_id_addr != 0)
     {
         msm_camera_cci_i2c_read(
@@ -451,6 +452,7 @@ int msm_sensor_match_vendor_id(struct msm_sensor_ctrl_t *s_ctrl)
                                 s_ctrl->sensordata->lens_id_info->data_type);
         have_lensid = 1;
     }
+#endif
 #endif
 #endif
 
@@ -480,6 +482,7 @@ int msm_sensor_match_vendor_id(struct msm_sensor_ctrl_t *s_ctrl)
 			}
 		}
 #ifdef CONFIG_MACH_XIAOMI_NEW_CAMERA
+#ifndef CONFIG_MACH_XIAOMI_LAVENDER
         if(have_lensid == 1)
         {
             if (s_ctrl->sensordata->lens_id_info->lens_id != lensid)
@@ -495,6 +498,7 @@ int msm_sensor_match_vendor_id(struct msm_sensor_ctrl_t *s_ctrl)
                        __func__, lensid, s_ctrl->sensordata->lens_id_info->lens_id);
             }
         }
+#endif
 #endif
 #endif
 	}
