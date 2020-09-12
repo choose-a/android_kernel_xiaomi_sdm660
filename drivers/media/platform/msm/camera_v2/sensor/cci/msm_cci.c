@@ -1,4 +1,5 @@
 /* Copyright (c) 2012-2017, The Linux Foundation. All rights reserved.
+ * Copyright (C) 2019 XiaoMi, Inc.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
@@ -31,11 +32,9 @@
 #define CCI_I2C_Q1_SIZE_32W 32
 #define CYCLES_PER_MICRO_SEC_DEFAULT 4915
 #define CCI_MAX_DELAY 1000000
-#if defined(CONFIG_MACH_LONGCHEER) || defined(CONFIG_MACH_XIAOMI_CLOVER)
+
 #define CCI_TIMEOUT msecs_to_jiffies(800)
-#else
-#define CCI_TIMEOUT msecs_to_jiffies(100)
-#endif
+
 /* TODO move this somewhere else */
 #define MSM_CCI_DRV_NAME "msm_cci"
 
